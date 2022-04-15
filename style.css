@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  margin: 1.7rem;
+}
+
+.hamburger {
+  position: fixed;
+  top: 65px;
+  right: 65px;
+  background-color: #fff;
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  z-index: 99999;
+}
+header {
+  position: relative;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(126, 213, 111, 0.8),
+      rgba(40, 180, 133, 0.8)
+    ),
+    url(./resources/hero.jpg);
+  width: 100%;
+  height: 95vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  clip-path: polygon(0 0, 100% 0%, 100% 75%, 0% 100%);
+}
+
+header .favicon {
+  position: relative;
+  padding-top: 2.5rem;
+  padding-left: 2.5rem;
+  width: 100px;
+}
+
+header .favicon img {
+  width: 100%;
+}
+
+header .header-content {
+  position: absolute;
+  top: 44%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.header-content {
+  position: relative;
+  line-height: 4rem;
+}
+
+.header-content h1 {
+  color: #fff;
+  font-size: 4.5rem;
+  letter-spacing: 0.9rem;
+  font-weight: 300;
+}
+
+.header-content p {
+  font-size: 1.5rem;
+  color: #fff;
+  word-spacing: 0.5rem;
+}
+
+.header-content a {
+  display: inline-block;
+  text-decoration: none;
+  color: #777;
+  background-color: #fff;
+  padding: 0.6rem 2rem;
+  border-radius: 5rem;
+}
