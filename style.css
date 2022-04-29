@@ -9,17 +9,60 @@
 
 body {
   margin: 1.7rem;
+  font-size: 62.5%;
+}
+
+::selection {
+  background-color: #55c57a;
+  color: #fff;
 }
 
 .hamburger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   top: 65px;
   right: 65px;
   background-color: #fff;
   border-radius: 50%;
-  height: 80px;
-  width: 80px;
+  height: 4rem;
+  width: 4rem;
   z-index: 99999;
+  cursor: pointer;
+}
+.hamburger span {
+  position: relative;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  height: 2px;
+  width: 25px;
+  background-color: #777;
+}
+.hamburger:hover span::after {
+  top: 8px;
+}
+.hamburger:hover span::before {
+  top: -8px;
+}
+.hamburger span::before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: 0;
+  width: 25px;
+  height: 2px;
+  background-color: #777;
+}
+.hamburger span::after {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 0;
+  width: 25px;
+  height: 2px;
+  background-color: #777;
 }
 header {
   position: relative;
@@ -49,35 +92,88 @@ header .favicon img {
 
 header .header-content {
   position: absolute;
-  top: 44%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
 }
 
 .header-content {
-  position: relative;
   line-height: 4rem;
 }
 
 .header-content h1 {
+  display: block;
   color: #fff;
-  font-size: 4.5rem;
-  letter-spacing: 0.9rem;
-  font-weight: 300;
+  font-size: 4rem;
+  letter-spacing: 2.5rem;
+  font-weight: 400;
 }
 
 .header-content p {
-  font-size: 1.5rem;
+  display: block;
+  font-size: 1rem;
   color: #fff;
-  word-spacing: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 1rem;
+  margin-bottom: 2rem;
 }
 
 .header-content a {
-  display: inline-block;
+  position: relative;
   text-decoration: none;
   color: #777;
   background-color: #fff;
-  padding: 0.6rem 2rem;
+  padding: 1rem 3rem;
   border-radius: 5rem;
+  font-size: 1rem;
+  box-shadow: 5px 7px 10px rgba(0, 0, 0, 0.15);
+  transition: 0.7s;
+  -webkit-transition: 0.7s;
+  -moz-transition: 0.7s;
+  -ms-transition: 0.7s;
+  -o-transition: 0.7s;
+  -webkit-border-radius: 5rem;
+  -moz-border-radius: 5rem;
+  -ms-border-radius: 5rem;
+  -o-border-radius: 5rem;
+}
+
+.header-content a::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: #fff;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  animation: moveInBottom 0.5s ease-out 0.75s;
+}
+
+.header-content a:hover {
+  -webkit-transform: translateY(-3px);
+  transform: translateY(-3px);
+  -webkit-box-shadow: 0 1rem 2rem rgb(0 0 0 / 20%);
+  box-shadow: 0 1rem 2rem rgb(0 0 0 / 20%);
+}
+
+.header-content a:active {
+  box-shadow: 5px 7px 10px rgba(0, 0, 0, 0.15);
+}
+@keyframes moveInout {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(3rem);
+    transform: translateY(3rem);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
 }
